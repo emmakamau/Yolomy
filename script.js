@@ -13,7 +13,24 @@ function myFunction() {
     }
 }
 
+//Select product
 
+function selectProduct() {
+    var checkBox1 = document.getElementById("check-men");
+    var checkBox2 = document.getElementById("check-women");
+    var checkBox3 = document.getElementById("check-children");
+
+    // If the checkbox is checked, display the output text
+    if (checkBox1.checked == true){
+        window.location.href = "#men-section";
+        } else if (checkBox2.checked){
+            window.location.href = "#women-section";
+        } else {
+            window.alert("Select a checkbox");
+        }
+    }
+
+    
 // Shopping Cart functionality
 
 var shoppingCart = (function() {
@@ -21,10 +38,12 @@ var shoppingCart = (function() {
     cart = [];
     
     // Constructor
-    function Item(name, price, count) {
-      this.name = name;
-      this.price = price;
-      this.count = count;
+    class Item {
+        constructor(name, price, count) {
+            this.name = name;
+            this.price = price;
+            this.count = count;
+        }
     }
     
     // Save cart
@@ -55,6 +74,7 @@ var shoppingCart = (function() {
       cart.push(item);
       saveCart();
     }
+
     // Set count from item
     obj.setCountForItem = function(name, count) {
       for(var i in cart) {
@@ -64,6 +84,7 @@ var shoppingCart = (function() {
         }
       }
     };
+
     // Remove item from cart
     obj.removeItemFromCart = function(name) {
         for(var item in cart) {
@@ -133,7 +154,7 @@ var shoppingCart = (function() {
   
 
   // Add item
-  $('.add-to-cart').click(function(event) {
+  $(document).on('click',"a.add-to-cart",function(event) {
     event.preventDefault();
     var name = $(this).data('name');
     var price = Number($(this).data('price'));
@@ -142,7 +163,7 @@ var shoppingCart = (function() {
   });
   
   // Clear items
-  $('.clear-cart').click(function() {
+  $(document).on('click',".clear-cart",function() {
     shoppingCart.clearCart();
     displayCart();
   });
@@ -170,7 +191,7 @@ var shoppingCart = (function() {
   
   // Delete item button
   
-  $('.show-cart').on("click", ".delete-item", function(event) {
+  $(document).on("click", ".delete-item",".show-cart", function(event) {
     var name = $(this).data('name')
     shoppingCart.removeItemFromCartAll(name);
     displayCart();
@@ -178,20 +199,20 @@ var shoppingCart = (function() {
   
   
   // -1
-  $('.show-cart').on("click", ".minus-item", function(event) {
+  $(document).on("click", ".minus-item",".show-cart", function(event) {
     var name = $(this).data('name')
     shoppingCart.removeItemFromCart(name);
     displayCart();
   })
   // +1
-  $('.show-cart').on("click", ".plus-item", function(event) {
+  $(document).on("click", ".plus-item",".show-cart", function(event) {
     var name = $(this).data('name')
     shoppingCart.addItemToCart(name);
     displayCart();
   })
   
   // Item count input
-  $('.show-cart').on("change", ".item-count", function(event) {
+  $(document).on("change", ".item-count",".show-cart", function(event) {
      var name = $(this).data('name');
      var count = Number($(this).val());
     shoppingCart.setCountForItem(name, count);
