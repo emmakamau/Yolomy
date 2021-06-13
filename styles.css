@@ -106,23 +106,23 @@
     display: inline-block;
   }
 
-.green{
+#green{
     background-color: green;
 }
 
-.blue{
+#blue{
     background-color: blue;
 }
 
-.black{
+#black{
     background-color: black;
 }
 
-.pink{
+#pink{
     background-color: pink;
 }
 
-.white{
+#white{
     background-color: white;
 }
 
@@ -173,30 +173,61 @@
 .heading-style{
     margin-top: 1rem;
 }
-
-/*
-a {
+  
+.previous {
+    border: none;
+    color:#ad8d49;
+    font-size: 2rem;
+    font-weight: bold;
     text-decoration: none;
     display: inline-block;
     padding: 8px 16px;
-  }
-  
-  a:hover {
-    background-color: #ddd;
-    color: black;
-  } */
-  
-  .previous {
-    border: solid #ad8d49 3px;
-  }
-  
-  .next {
-    border: solid #ad8d49 3px;
-  }
-  
-  .round {
-    border-radius: 50%;
-  }
+}
+
+.previous1 {
+    border: none;
+    color:#ad8d49;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+.next {
+    border: none;
+    color:#ad8d49;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    margin-right: 1rem;
+}
+
+.next1 {
+    border: none;
+    color:#ad8d49;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    margin-left: 1rem;
+}
+
+.navtxt{
+    color:#ad8d49;
+    font-weight: bold;
+    margin-left: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+
+
+.round {
+border-radius: 50%;
+}
 
 /* Styling for horizontal title lines*/
 
@@ -214,7 +245,7 @@ a {
     font-family: Arial;
     position: relative;
     overflow: hidden;
-    text-align:left;
+    text-align:right;
     margin: 2rem;
 }
 
@@ -236,10 +267,10 @@ a {
     height: 2px;
     background: grey;
     position: absolute;
-    width: 100%;
+    width: 90%;
     top: 50%;
     margin-top: -2px;
-    margin-left: 8rem;
+    margin-left: -60rem;
 }
 
 fieldset{
@@ -268,6 +299,7 @@ legend{
     height: 5rem;
     color: white;
     font-size: 18px;
+    margin-left: 0.9rem;
 }
 
 .mycontainer4{
@@ -277,7 +309,7 @@ legend{
     color: white;
     width: 1052px;
     height: 18rem;
-    margin-left: 72px;
+    margin-left: 14px;
 }
 
 .part-one{
@@ -311,3 +343,4 @@ legend{
     margin-left: 25rem;
     margin-top: 2rem;
 }
+
