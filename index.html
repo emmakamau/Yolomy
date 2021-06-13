@@ -9,6 +9,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
 </head>
 <body>
 <div class="container-fluid mycontainer">
@@ -24,7 +25,10 @@
         <ul class="nav navstyle">
             <li><a class="navstyle" href="#">Home</a></li>
             <li><a class="navstyle" href="#men-section">Products</a></li>
-            <li><a class="navstyle" href="#"><img src="assets/logo/shop.png"></a></li>
+            <li>
+                <img src="assets/logo/shop.png" data-toggle="modal" data-target="#cart">
+                <span class="total-count"></span>
+            </li>
         </ul>
     </div>
     <div class="centered">
@@ -51,11 +55,11 @@
         </form>
     </div>
 </div>
-<div class="container-fluid" name="men_section" id="men-section">
+<div class="container-fluid mycontainer" name="men_section" id="men-section">
     <div>
         <p class="hr-title-men">MEN</p>
-        <a href="#" class="previous round">&#8249;</a>
-        <a href="#" class="next round">&#8250;</a>
+        <a href="#" class="previous top-right round">&#8249;</a>
+        <a href="#" class="next top-right">&#8250;</a>
     </div>
     <div class="container-fluid row">
         <div class="card">
@@ -74,13 +78,15 @@
                     </form>
                 </div>
                 <div class="col-sm-6 align-right">
-                    <span class="dot green"></span>
-                    <span class="dot blue"></span>
-                    <span class="dot black"></span>
+                    <span class="dot green" id="green"></span>
+                    <span class="dot blue" id="blue"></span>
+                    <span class="dot black" id="black"></span>
                 </div>
             </div>
             <div class="card-body">
-                <img src="assets/products/tshirt.png">
+                <a href="#" class="add-to-cart" data-name="tshirt" data-price="5.00" >
+                    <img src="assets/products/tshirt.png" id="tshirt">
+                </a>
             </div>
             <div class="card-footer row">
                 <div class="col-sm-6 align-left">T-SHIRT</div>
@@ -129,9 +135,11 @@
         </div>
     </div>
 </div>
-<div class="container-fluid" name="women_section">
+<div class="container-fluid mycontainer" name="women_section">
     <div>
-       <p class="hr-title-women">WOMEN</p>
+        <p class="hr-title-women">WOMEN</p>
+        <a href="#" class="previous top-left round">&#8249;</a>
+        <a href="#" class="next top-left">&#8250;</a>
     </div>
     <div class="container-fluid row">
         <div class="card">
@@ -200,12 +208,12 @@
                     </form>
                 </div>
                 <div class="col-sm-6 align-right">
-                    <span class="dot pink"></span>
-                    <span class="dot white"></span>
+                    <span class="dot pink" id="pink"></span>
+                    <span class="dot white" id="white"></span>
                 </div>
             </div>
             <div class="card-body">
-                <img src="assets/products/tshirt_ladies.png">
+                <img src="assets/products/tshirt_ladies.png" id="tshirt_ladies">
             </div>
             <div class="card-footer row">
                 <div class="col-sm-6 align-left">T-SHIRT</div>
@@ -262,5 +270,30 @@
     </div>
     <p class="copyright">COPYRIGHT 2015. YOLOMY INC</p>
 </div>
+
+ <!-- Modal -->
+ <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table class="show-cart table">
+            
+          </table>
+          <div>Total price: &euro;<span class="total-cart"></span></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Order now</button>
+          <button class="clear-cart btn btn-danger">Clear Cart</button>
+        </div>
+      </div>
+    </div>
+  </div> 
 
 </body>
