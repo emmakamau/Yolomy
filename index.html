@@ -25,9 +25,10 @@
         <ul class="nav navstyle">
             <li><a class="navstyle" href="#">Home</a></li>
             <li><a class="navstyle" href="#men-section">Products</a></li>
-            <li>
-                <img src="assets/logo/shop.png" data-toggle="modal" data-target="#cart">
-                <span class="total-count"></span>
+            <li><a href="#" class="navstyle">
+                    <img src="assets/logo/shop.png" data-toggle="modal" data-target="#cart">
+                    (<span class="total-count"></span>)
+                </a>
             </li>
         </ul>
     </div>
@@ -47,10 +48,10 @@
     <div class="section_one">
         <form>
             <div class="checkbox">
-                <label><input type="checkbox" class="checkbox_style">MEN</label>
-                <label><input type="checkbox" class="checkbox_style">WOMEN</label>
-                <label><input type="checkbox" class="checkbox_style">CHILDREN</label>
-                <button type="button" class="btn btn-default check_btn">SEE ALL PRODUCTS</button>
+                <label><input type="checkbox" class="checkbox_style" id="check-men">MEN</label>
+                <label><input type="checkbox" class="checkbox_style" id="check-women">WOMEN</label>
+                <label><input type="checkbox" class="checkbox_style" id="check-children">CHILDREN</label>
+                <button type="button" class="btn btn-default check_btn" onClick="selectProduct()">SEE ALL PRODUCTS</button>
             </div>
         </form>
     </div>
@@ -58,88 +59,99 @@
 <div class="container-fluid mycontainer" name="men_section" id="men-section">
     <div>
         <p class="hr-title-men">MEN</p>
-        <a href="#" class="previous top-right round">&#8249;</a>
-        <a href="#" class="next top-right">&#8250;</a>
+        <p class="navtxt top-right">1/5</p>
+        <a href="#theCarousel" class="previous top-right" data-slide="prev">&#8249;</a>
+        <a href="#theCarousel" class="next top-right" data-slide="next">&#8250;</a>
     </div>
     <div class="container-fluid row">
-        <div class="card">
-            <div class="card-header row">
-                <div class="col-sm-6 align-left">
-                    <form>
-                        <select name="clothsize" id="sizes">
-                            <option value="size">SIZE</option>
-                            <option value="xs">XS</option>
-                            <option value="s">S</option>
-                            <option value="m">M</option>
-                            <option value="l">L</option>
-                            <option value="xl">XL</option>
-                            <option value="xxl">XXL</option>
-                        </select>
-                    </form>
+        <div class="carousel slide multi-item-carousel" id="theCarousel">
+            <div class="carousel-inner">    
+                <div class="container-fluid row">
+                    <div class="card product">
+                        <div class="card-header row">
+                            <div class="col-sm-6 align-left">
+                                <form>
+                                    <select name="clothsize" id="sizes">
+                                        <option value="size">SIZE</option>
+                                        <option value="xs">XS</option>
+                                        <option value="s">S</option>
+                                        <option value="m">M</option>
+                                        <option value="l">L</option>
+                                        <option value="xl">XL</option>
+                                        <option value="xxl">XXL</option>
+                                    </select>
+                                </form>
+                            </div>
+                            <div class="col-sm-6 align-right">
+                                <span class="dot green" id="green"></span>
+                                <span class="dot blue" id="blue"></span>
+                                <span class="dot black" id="black"></span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <a href="#" class="add-to-cart" data-name="tshirt" data-price="5.00" >
+                                <img src="assets/products/tshirt.png" id="tshirt">
+                            </a>
+                        </div>
+                        <div class="card-footer row">
+                            <div class="col-sm-6 align-left">T-SHIRT</div>
+                            <div class="col-sm-6 align-right">5,00&euro;</div>
+                        </div>
+                    </div>
+                <div class="card product">
+                    <div class="card-header row">
+                        <div class="col-sm-6 align-left">
+                            <form>
+                                <select name="clothsize" id="sizes">
+                                    <option value="size">SIZE</option>
+                                    <option value="xs">XS</option>
+                                    <option value="s">S</option>
+                                    <option value="m">M</option>
+                                    <option value="l">L</option>
+                                    <option value="xl">XL</option>
+                                    <option value="xxl">XXL</option>
+                                </select>
+                            </form>
+                        </div>
+                        <div class="col-sm-6 align-right"></div>
+                    </div>
+                    <div class="card-body">
+                        <a href="#" class="add-to-cart" data-name="pants" data-price="30.00" >
+                            <img src="assets/products/pants.png">
+                        </a>
+                    </div>
+                    <div class="card-footer row">
+                        <div class="col-sm-6 align-left">PANTS-FORCLAZ</div>
+                        <div class="col-sm-6 align-right">30,00&euro;</div>
+                    </div>
                 </div>
-                <div class="col-sm-6 align-right">
-                    <span class="dot green" id="green"></span>
-                    <span class="dot blue" id="blue"></span>
-                    <span class="dot black" id="black"></span>
+                <div class="card product">
+                    <div class="card-header row">
+                        <div class="col-sm-6 align-left">
+                        <P>10LITRI</P>
+                        </div>
+                        <div class="col-sm-6"></div>
+                    </div>
+                    <div class="card-body">
+                        <a href="#" class="add-to-cart" data-name="backpack" data-price="60.00" >
+                            <img src="assets/products/backpack.png">
+                        </a>
+                    </div>
+                    <div class="card-footer row">
+                        <div class="col-sm-6 align-left">BACKPACK</div>
+                        <div class="col-sm-6 align-right">60,00&euro;</div>
+                    </div>
                 </div>
-            </div>
-            <div class="card-body">
-                <a href="#" class="add-to-cart" data-name="tshirt" data-price="5.00" >
-                    <img src="assets/products/tshirt.png" id="tshirt">
-                </a>
-            </div>
-            <div class="card-footer row">
-                <div class="col-sm-6 align-left">T-SHIRT</div>
-                <div class="col-sm-6 align-right">5,00&euro;</div>
             </div>
         </div>
-        <div class="card">
-            <div class="card-header row">
-                <div class="col-sm-6 align-left">
-                    <form>
-                        <select name="clothsize" id="sizes">
-                            <option value="size">SIZE</option>
-                            <option value="xs">XS</option>
-                            <option value="s">S</option>
-                            <option value="m">M</option>
-                            <option value="l">L</option>
-                            <option value="xl">XL</option>
-                            <option value="xxl">XXL</option>
-                        </select>
-                    </form>
-                </div>
-                <div class="col-sm-6 align-right"></div>
-            </div>
-            <div class="card-body">
-                <img src="assets/products/pants.png">
-            </div>
-            <div class="card-footer row">
-                <div class="col-sm-6 align-left">PANTS-FORCLAZ</div>
-                <div class="col-sm-6 align-right">30,00&euro;</div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header row">
-                <div class="col-sm-6 align-left">
-                   <P>10LITRI</P>
-                </div>
-                <div class="col-sm-6"></div>
-            </div>
-            <div class="card-body">
-                <img src="assets/products/backpack.png">
-            </div>
-            <div class="card-footer row">
-                <div class="col-sm-6 align-left">BACKPACK</div>
-                <div class="col-sm-6 align-right">60,00&euro;</div>
-            </div>
-        </div>
-    </div>
+    </div>        
 </div>
-<div class="container-fluid mycontainer" name="women_section">
+<div class="container-fluid mycontainer" name="women_section" id="women-section">
     <div>
         <p class="hr-title-women">WOMEN</p>
-        <a href="#" class="previous top-left round">&#8249;</a>
-        <a href="#" class="next top-left">&#8250;</a>
+        <p class="navtxt top-left">1/5</p>
+        <a href="#" class="previous1 top-left round">&#8249;</a>
+        <a href="#" class="next1 top-left">&#8250;</a>
     </div>
     <div class="container-fluid row">
         <div class="card">
@@ -160,7 +172,9 @@
                 <div class="col-sm-6 align-right"></div>
             </div>
             <div class="card-body">
-                <img src="assets/products/giacket.png">
+                <a href="#" class="add-to-cart" data-name="giacket" data-price="60.00" >
+                    <img src="assets/products/giacket.png">
+                </a>
             </div>
             <div class="card-footer row">
                 <div class="col-sm-6 align-left">GIACKET</div>
@@ -185,7 +199,9 @@
                 <div class="col-sm-6 align-right"></div>
             </div>
             <div class="card-body">
-                <img src="assets/products/trekkingshoes.png">
+                <a href="#" class="add-to-cart" data-name="trekkingshoes" data-price="80.00" >
+                    <img src="assets/products/trekkingshoes.png">
+                </a>
             </div>
             <div class="card-footer row">
                 <div class="col-sm-6 align-left">TREKKING-SHOES</div>
@@ -213,7 +229,9 @@
                 </div>
             </div>
             <div class="card-body">
-                <img src="assets/products/tshirt_ladies.png" id="tshirt_ladies">
+                <a href="#" class="add-to-cart" data-name="tshirt-ladies" data-price="20.00" >
+                    <img src="assets/products/tshirt_ladies.png" id="tshirt_ladies">
+                </a>
             </div>
             <div class="card-footer row">
                 <div class="col-sm-6 align-left">T-SHIRT</div>
